@@ -2511,6 +2511,50 @@ a {
 }
 
 
+.social-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+}
+
+
+.social-links a {
+
+    color: var(--solar-yellow);
+
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+
+}
+
+
+.social-links a:hover,
+.social-links a:focus-visible {
+
+    color: var(--white);
+
+}
+
+
+.social-icon,
+.social-icon svg {
+
+    display: inline-block;
+
+    width: 18px;
+
+    height: 18px;
+
+}
+
+
 .gallery-item:hover img {
 
     transform: scale(1.08);
@@ -2663,6 +2707,44 @@ a {
 
         font-size: 0.85rem;
 
+    }
+
+}
+/* Small Solar Systems update: preserve the original page styling. */
+:root {
+    --accent-blue: var(--primary-dark);
+}
+
+#solar-systems .product-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#solar-systems .product-image {
+    height: 175px;
+}
+
+#solar-systems .product-image img {
+    padding: 0;
+    object-fit: cover;
+}
+
+@media (max-width: 800px) {
+
+    #solar-systems .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    #solar-systems .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #solar-systems .product-image {
+        height: 220px;
     }
 
 }
