@@ -2511,50 +2511,6 @@ a {
 }
 
 
-.social-links {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-
-    margin-top: 12px;
-
-}
-
-
-.social-links a {
-
-    color: var(--solar-yellow);
-
-    font-weight: 600;
-
-    transition: color 0.25s ease;
-
-}
-
-
-.social-links a:hover,
-.social-links a:focus-visible {
-
-    color: var(--white);
-
-}
-
-
-.social-icon,
-.social-icon svg {
-
-    display: inline-block;
-
-    width: 18px;
-
-    height: 18px;
-
-}
-
-
 .gallery-item:hover img {
 
     transform: scale(1.08);
@@ -2636,9 +2592,11 @@ a {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 30px;
+
+    align-items: start;
 
 }
 
@@ -2648,6 +2606,93 @@ a {
     width: 100%;
 
     display: block;
+
+}
+
+
+/* Keep every gallery video inside the same visual frame. */
+.gallery-video {
+
+    width: 100%;
+
+    height: 320px;
+
+    overflow: hidden;
+
+    background: #111111;
+
+}
+
+
+.gallery-video video {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+@media (max-width: 800px) {
+
+    .gallery-video {
+        height: 240px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .gallery-video {
+        height: 220px;
+    }
+
+}
+
+
+.social-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    margin-top: 12px;
+
+}
+
+
+.social-links a {
+
+    color: var(--solar-yellow);
+
+    font-weight: 600;
+
+    transition: color 0.25s ease;
+
+}
+
+
+.social-links a:hover,
+.social-links a:focus-visible {
+
+    color: var(--white);
+
+}
+
+
+.social-icon,
+.social-icon svg {
+
+    display: inline-block;
+
+    width: 18px;
+
+    height: 18px;
 
 }
 
