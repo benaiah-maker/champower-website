@@ -2371,418 +2371,419 @@ a {
 ======================================== */
 
 .gallery-hero-section {
-
     background: var(--primary-dark);
-
     color: var(--white);
-
     padding: 120px 0;
-
 }
-
 
 .gallery-hero-section h1 {
-
     font-size: clamp(2.8rem, 6vw, 5rem);
-
     line-height: 1.1;
-
     margin-bottom: 25px;
-
 }
-
 
 .gallery-hero-section > .container > p:not(.section-label) {
-
     max-width: 650px;
-
     color: #d4ded9;
-
     font-size: 1.05rem;
-
 }
-
 
 /* ========================================
    GALLERY SECTION
 ======================================== */
 
 .gallery-section {
-
     padding: 100px 0;
-
     background: var(--white);
-
 }
-
-
-/* FILTERS */
 
 .gallery-filters {
-
     display: flex;
-
     justify-content: center;
-
+    align-items: center;
     gap: 12px;
-
     flex-wrap: wrap;
-
-    margin-bottom: 50px;
-
+    margin-bottom: 60px;
 }
-
 
 .filter-button {
-
     border: 1px solid #dce4e0;
-
     background: transparent;
-
-    padding: 12px 22px;
-
+    padding: 12px 24px;
+    border-radius: 30px;
     cursor: pointer;
-
+    font: inherit;
     font-weight: 600;
-
     color: var(--text-dark);
-
     transition: 0.3s ease;
-
 }
-
 
 .filter-button:hover,
-
 .filter-button.active {
-
     background: var(--accent-blue);
-
     color: var(--white);
-
     border-color: var(--accent-blue);
-
 }
-
-
-/* GALLERY GRID */
-
-.gallery-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    grid-auto-rows: 280px;
-
-    gap: 20px;
-
-}
-
-
-.gallery-item {
-
-    position: relative;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-}
-
-
-.gallery-item.large {
-
-    grid-row: span 2;
-
-}
-
-
-.gallery-item img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    transition: 0.5s ease;
-
-}
-
-
-.gallery-item:hover img {
-
-    transform: scale(1.08);
-
-}
-
-
-/* OVERLAY */
-
-.gallery-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-end;
-
-    padding: 25px;
-
-    background: linear-gradient(
-        transparent,
-        rgba(0, 0, 0, 0.8)
-    );
-
-    opacity: 0;
-
-    transition: 0.3s ease;
-
-}
-
-
-.gallery-item:hover .gallery-overlay {
-
-    opacity: 1;
-
-}
-
-
-.gallery-overlay span {
-
-    color: var(--solar-yellow);
-
-    font-size: 0.75rem;
-
-    font-weight: 700;
-
-    letter-spacing: 1px;
-
-}
-
-
-.gallery-overlay h3 {
-
-    color: var(--white);
-
-    margin-top: 8px;
-
-}
-
 
 /* ========================================
-   VIDEO SECTION
+   GALLERY CATEGORIES
+======================================== */
+
+.gallery-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.gallery-category-block {
+    display: block;
+}
+
+.gallery-category-block[hidden] {
+    display: none !important;
+}
+
+.gallery-category-heading {
+    max-width: 760px;
+    margin-bottom: 30px;
+}
+
+.gallery-category-heading h2 {
+    margin-bottom: 12px;
+}
+
+.gallery-category-heading p:not(.section-label) {
+    color: var(--text-light);
+}
+
+/* ========================================
+   GALLERY GRID
+======================================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* ========================================
+   GALLERY CARD
+======================================== */
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    background: var(--white);
+    border: 1px solid #e5ebe8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.gallery-image-wrap {
+    width: 100%;
+    height: 250px;
+    flex-shrink: 0;
+    overflow: hidden;
+    background: #edf2ef;
+}
+
+.gallery-image-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image-wrap img {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   GALLERY CARD CONTENT
+======================================== */
+
+.gallery-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 22px;
+    background: var(--white);
+}
+
+.gallery-card-category {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--accent-blue);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.gallery-card-content h3 {
+    margin: 0 0 20px;
+    color: var(--text-dark);
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+
+.gallery-details-link {
+    display: inline-block;
+    width: fit-content;
+    margin-top: auto;
+    padding: 10px 17px;
+    color: var(--white);
+    border-radius: 5px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.gallery-details-link:hover,
+.gallery-details-link:focus-visible {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Prevent old overlay styles from covering card text/buttons. */
+.gallery-overlay {
+    display: none !important;
+}
+
+[data-gallery-item][hidden],
+.gallery-item[hidden] {
+    display: none !important;
+}
+
+/* ========================================
+   GALLERY VIDEOS
 ======================================== */
 
 .gallery-video-section {
-
     padding: 100px 0;
-
     background: var(--light-background);
-
 }
-
 
 .video-grid {
-
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 1fr));
-
     gap: 30px;
-
-    align-items: start;
-
+    align-items: stretch;
 }
 
-
-.gallery-video video {
-
-    width: 100%;
-
-    display: block;
-
-}
-
-
-/* Keep every gallery video inside the same visual frame. */
-.gallery-video {
-
-    width: 100%;
-
-    height: 320px;
-
+.gallery-video-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid #e5ebe8;
+    border-radius: 10px;
     overflow: hidden;
-
-    background: #111111;
-
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
-
-.gallery-video video {
-
+.gallery-video {
     width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #111111;
+}
 
+.gallery-video video,
+.gallery-video-card video {
+    display: block;
+    width: 100%;
     height: 100%;
-
     object-fit: cover;
-
 }
 
-
-@media (max-width: 800px) {
-
-    .gallery-video {
-        height: 240px;
-    }
-
+.gallery-video-content {
+    padding: 20px;
 }
 
-
-@media (max-width: 600px) {
-
-    .gallery-video {
-        height: 220px;
-    }
-
+.gallery-video-content h3 {
+    margin: 0;
 }
 
+/* ========================================
+   SOCIAL LINKS
+======================================== */
 
 .social-links {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 6px;
-
     margin-top: 12px;
-
 }
-
 
 .social-links a {
-
     color: var(--solar-yellow);
-
     font-weight: 600;
-
     transition: color 0.25s ease;
-
 }
-
 
 .social-links a:hover,
 .social-links a:focus-visible {
-
     color: var(--white);
-
 }
-
 
 .social-icon,
 .social-icon svg {
-
     display: inline-block;
-
     width: 18px;
-
     height: 18px;
-
 }
-
 
 /* ========================================
-   GALLERY RESPONSIVE
+   FINAL RESPONSIVE DESIGN
 ======================================== */
 
-@media (max-width: 800px) {
+@media (max-width: 1100px) {
+    .services-category-navigation {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     .gallery-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
-
-    .gallery-item.large {
-
-        grid-row: span 1;
-
+@media (max-width: 1000px) {
+    .products-grid,
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
-
-    .video-grid {
-
+@media (max-width: 900px) {
+    .about-hero-container,
+    .company-introduction-container,
+    .mission-vision-grid,
+    .areas-container {
         grid-template-columns: 1fr;
-
     }
 
-}
-
-
-@media (max-width: 600px) {
-
-
-    .gallery-grid {
-
-        grid-template-columns: 1fr;
-
-        grid-auto-rows: 300px;
-
+    .about-hero-container,
+    .company-introduction-container,
+    .areas-container {
+        gap: 50px;
     }
 
-
-    .gallery-filters {
-
-        justify-content: flex-start;
-
+    .values-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-
-    .filter-button {
-
-        padding: 10px 15px;
-
-        font-size: 0.85rem;
-
-    }
-
-}
-/* Small Solar Systems update: preserve the original page styling. */
-:root {
-    --accent-blue: var(--primary-dark);
-}
-
-#solar-systems .product-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 16px;
-}
-
-#solar-systems .product-image {
-    height: 175px;
-}
-
-#solar-systems .product-image img {
-    padding: 0;
-    object-fit: cover;
-}
-
-@media (max-width: 800px) {
 
     #solar-systems .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .gallery-video {
+        height: 260px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .product-section-heading,
+    .category-heading {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gallery-category-list {
+        gap: 60px;
+    }
+
+    .gallery-image-wrap {
+        height: 240px;
+    }
+
+    .gallery-video {
+        height: 240px;
+    }
 }
 
 @media (max-width: 600px) {
+    .services-navigation,
+    .products-grid,
+    .benefits-grid,
+    .services-category-navigation,
+    .product-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-hero-section,
+    .product-section,
+    .product-category-section,
+    .service-benefits-section,
+    .gallery-section,
+    .gallery-video-section {
+        padding: 75px 0;
+    }
+
+    .about-hero-section,
+    .company-introduction-section,
+    .company-journey-section,
+    .mission-vision-section,
+    .core-values-section,
+    .areas-section {
+        padding: 75px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .services-hero-container h1,
+    .about-hero-content h1 {
+        font-size: 2.7rem;
+    }
+
+    .contact-cta-container h2 {
+        font-size: 2rem;
+    }
+
+    .mission-vision-card {
+        padding: 35px;
+    }
+
+    .values-grid,
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .about-hero-badge {
+        padding: 30px;
+    }
+
+    .product-image {
+        height: 260px;
+    }
 
     #solar-systems .product-grid {
         grid-template-columns: 1fr;
@@ -2792,4 +2793,86 @@ a {
         height: 220px;
     }
 
+    .gallery-filters {
+        justify-content: flex-start;
+        gap: 8px;
+        margin-bottom: 40px;
+    }
+
+    .filter-button {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+
+    .gallery-image-wrap {
+        height: 260px;
+    }
+
+    .gallery-video {
+        height: 220px;
+    }
+}
+
+/* Solar Systems: five products in one row on desktop. */
+:root {
+    --accent-blue: var(--primary-dark);
+}
+
+#solar-systems .product-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+}
+
+@media (max-width: 900px) {
+    #solar-systems .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #solar-systems .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+  /* ========================================
+   GALLERY IMAGE SIZE FIX
+======================================== */
+
+/* ========================================
+   GALLERY IMAGE SPACING
+======================================== */
+
+.gallery-image-wrap {
+    width: 70% !important;
+    height: 270px !important;
+    padding: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    background: #edf2ef;
+}
+
+.gallery-image-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border-radius: 6px;
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    .gallery-image-wrap {
+        height: 300px !important;
+        padding: 14px !important;
+    }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+    .gallery-image-wrap {
+        height: 300px !important;
+        padding: 12px !important;
+    }
 }
